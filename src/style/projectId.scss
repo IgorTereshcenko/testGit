@@ -1,0 +1,22 @@
+.projectId {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 50px;
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+    &__login {
+        font-size: 20px;
+        color: #000000;
+    }
+    &__profile,&__rep,&__followers {
+        font-size: 20px;
+        color: #000000;
+        &:hover {
+            color: #585555;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.searchProjects {
+    width: 90%;
+    padding-top: 30px;
+    &__input {
+        width: inherit;
+        height: 30px;
+        padding: 0 10px;
+        background: #FFFFFF;
+        border: 1px solid #A2A3A4;
+    }
+    &__request {
+        padding: 8px 10px;
+        background: #00A3FF;
+        border: none;
+        color: aliceblue;
+        cursor: pointer;
+        &:hover {
+            background: #016ead;
+        }
+    }
+}
