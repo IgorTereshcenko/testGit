@@ -1,9 +1,7 @@
 import { useState } from "react";
 import '../style/searchProjects.scss';
 
-const SearchProjects = ({requestProjects,errorText}) => {
-
-    const [text,setText] = useState('');
+const SearchProjects = ({requestProjects,errorText,text,setText}) => {
 
     return (
         <div className="searchProjects">

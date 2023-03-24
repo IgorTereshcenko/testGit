@@ -3,9 +3,9 @@ import { createAsyncThunk} from "@reduxjs/toolkit";
 
 export const fetchProjects = createAsyncThunk(
     'projects/fetchAll',
-        async (subject,thunkAPI) => {
+        async ({ subject, page = 1, per_page = 15 }, thunkAPI) => {
             try {
-                const response = await axios.get(`https://api.github.com/search/repositories?q=${subject}`);
+                const response = await axios.get(`https://api.github.com/search/repositories?q=${subject}&page=${page}&per_page=${per_page}`);
                 return response.data;
             } catch(e) {
                 return thunkAPI.rejectWithValue(e.message);
