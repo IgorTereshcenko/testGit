@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import Pagination from '../components/Pagination';
+import LimitPage from '../components/LimitPage';
 import ProjectsWrapper from '../components/ProjectsWrapper';
 import SearchProjects from "../components/SearchProjects";
 import { fetchProjects } from "../services/gitHubService";
@@ -31,9 +32,10 @@ const Projects = () => {
         setTotalCount(getPageCount(allProjects.total_count,per_page));
     },[allProjects.total_count,per_page])
 
+ 
     const changePage = (text,page) => {
         setPage(page);
-        dispatch(fetchProjects({ subject: text, page: page }));
+        dispatch(fetchProjects({ subject: text, page: page}));
     }
 
     if(isLoading) {
@@ -49,6 +51,9 @@ const Projects = () => {
                 errorText={errorText}
                 text={text}
                 setText={setText}/>
+            <LimitPage
+                per_page={per_page}
+                setPer_page={setPer_page}/>
             <ProjectsWrapper allProjects={allProjects}/>
             <Pagination 
                 changePage={changePage}

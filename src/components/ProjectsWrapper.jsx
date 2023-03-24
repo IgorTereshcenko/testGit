@@ -3,7 +3,7 @@ import '../style/projectsWrapper.scss';
 
 const ProjectsWrapper = ({allProjects}) => {
 
-    if(!allProjects.items.length) {
+    if(!allProjects.items) {
         return <h2>объекты не найдены</h2>
     }
     
