@@ -22,17 +22,22 @@ const Projects = () => {
 
     const requestProjects = (value) => {
         if(value.length > 2) {
-            dispatch(fetchProjects({subject:value}));
+            dispatch(fetchProjects({subject:value,per_page:per_page}));
         } else {
             setError(true);
         }    
     }
 
     useEffect(() => {
+        if(text.length > 2) {
+            requestProjects(text)
+        }    
+    },[per_page])
+
+    useEffect(() => {
         setTotalCount(getPageCount(allProjects.total_count,per_page));
     },[allProjects.total_count,per_page])
 
- 
     const changePage = (text,page) => {
         setPage(page);
         dispatch(fetchProjects({ subject: text, page: page}));

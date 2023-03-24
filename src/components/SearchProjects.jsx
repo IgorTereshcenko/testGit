@@ -1,4 +1,3 @@
-import { useState } from "react";
 import '../style/searchProjects.scss';
 
 const SearchProjects = ({requestProjects,errorText,text,setText}) => {
