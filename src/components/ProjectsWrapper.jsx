@@ -4,14 +4,14 @@ import '../style/projectsWrapper.scss';
 const ProjectsWrapper = ({allProjects}) => {
 
     if(!allProjects.items) {
-        return <h2>объекты не найдены</h2>
+        return <h2>начните поиск</h2>
     }
     
     return (
         <div className="projectsWrapper">
-            {allProjects.items ? allProjects.items.map(item =>
+            {allProjects.items.length ? allProjects.items.map(item =>
                 <ProjectsCard item={item} key={item.id}/>    
-            ) : 'начните поиск'}
+            ) : <h2>Объекты не найдены</h2>}
         </div>
     )
 }
